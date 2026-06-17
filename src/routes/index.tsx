@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Calendar,
@@ -313,8 +313,8 @@ function LandingPage() {
 
             {/* CTA */}
             <div className="mt-4 w-full">
-              <a
-                href={CTA_URL}
+              <Link
+                to={CTA_URL}
                 className="group inline-flex w-full items-center justify-center gap-2 px-6 py-3.5 bg-gold hover:bg-[#E8C45A] text-navy font-bold text-sm rounded-lg transition-all duration-300"
               >
                 ENTRAR NO GRUPO
@@ -322,7 +322,7 @@ function LandingPage() {
                   className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   strokeWidth={2.5}
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -377,8 +377,8 @@ function LandingPage() {
 
             {/* CTA */}
             <div className="mt-8">
-              <a
-                href={CTA_URL}
+              <Link
+                to={CTA_URL}
                 className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 sm:px-8 py-4 bg-gold hover:bg-[#E8C45A] text-navy font-bold text-sm rounded-lg transition-all duration-300"
               >
                 ENTRAR NO GRUPO
@@ -386,7 +386,7 @@ function LandingPage() {
                   className="h-5 w-5 transition-transform group-hover:translate-x-1"
                   strokeWidth={2.5}
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -498,8 +498,8 @@ function LandingPage() {
           </div>
 
           <Reveal delay={200} className="mt-12 sm:mt-16 flex justify-center">
-            <a
-              href={CTA_URL}
+            <Link
+              to={CTA_URL}
               className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 sm:px-10 py-4 bg-gold hover:bg-[#E8C45A] text-navy font-bold text-xs sm:text-sm rounded-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]"
             >
               QUERO DOMINAR OS 4 PILARES
@@ -507,7 +507,7 @@ function LandingPage() {
                 className="h-5 w-5 transition-transform group-hover:translate-x-1"
                 strokeWidth={2.5}
               />
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -552,13 +552,13 @@ function LandingPage() {
             </Reveal>
 
             <Reveal delay={500} className="mt-8 sm:mt-10 flex flex-col items-center gap-6 sm:gap-8">
-              <a
-                href={CTA_URL}
+              <Link
+                to={CTA_URL}
                 className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full px-6 sm:px-12 py-4 sm:py-5 bg-gold hover:bg-[#E8C45A] text-navy font-bold text-sm sm:text-base transition-all duration-300 hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] hover:scale-105"
               >
                 Entrar no grupo agora
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />
-              </a>
+              </Link>
               <Countdown />
               <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider px-2">
                 Aulas ao vivo • Sem replay • Vagas limitadas por sala do Meet

@@ -19,11 +19,16 @@ export const Route = createFileRoute("/grupo")({
 const WHATSAPP_URL = "https://chat.whatsapp.com/EtrlMyrfJU90MjnPROlui1";
 
 function GrupoPage() {
-  const [seconds, setSeconds] = useState(5);
+  const [seconds, setSeconds] = useState(2);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const total = 5;
+    // Track the conversion as soon as the user reaches the group page.
+    if (typeof window !== "undefined") {
+      (window as { fbq?: (...args: unknown[]) => void }).fbq?.("track", "Lead");
+    }
+
+    const total = 2;
     const timer = setInterval(() => {
       setSeconds((prev) => {
         const next = prev <= 1 ? 0 : prev - 1;
