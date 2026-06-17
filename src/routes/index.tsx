@@ -283,9 +283,9 @@ function LandingPage() {
           />
 
           {/* Mobile content: text centered vertically, CTA pinned to bottom */}
-          <div className="relative z-10 flex min-h-screen w-full flex-col items-center px-5 pt-16 pb-8 max-w-sm mx-auto">
+          <div className="relative z-10 flex min-h-screen w-full flex-col items-center px-5 pt-16 pb-24 max-w-sm mx-auto">
             {/* Text group near the top */}
-            <div className="flex w-full flex-1 flex-col items-center justify-start text-center">
+            <div className="flex w-full flex-col items-center justify-start text-center">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-gold/40 rounded-full text-[9px] uppercase tracking-[0.18em] text-gold font-bold mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
@@ -298,27 +298,8 @@ function LandingPage() {
               <span className="shimmer-text">mentoria gratuita</span>{" "}
               no Meet para te ajudar a construir uma agência que faça pelo menos{" "}
               <span className="shimmer-text">R$ 100.000</span>{" "}
-              de lucro no bolso por mês focando em apenas 4 pilares:
+              de lucro no bolso por mês focando em apenas 4 pilares
             </h1>
-
-            {/* 4 Pilares row */}
-            <div className="mt-4 grid grid-cols-2 items-center gap-x-3 gap-y-2 w-full">
-              {[
-                { icon: Target, label: "Proposta" },
-                { icon: Settings, label: "Processo" },
-                { icon: MapPin, label: "Posicionamento" },
-                { icon: Megaphone, label: "Canais" },
-              ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 min-w-0 bg-black/50 backdrop-blur-sm rounded-lg px-2 py-1.5 border border-white/10">
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/30 text-gold border border-gold/40">
-                    <Icon className="h-3.5 w-3.5" strokeWidth={2} />
-                  </div>
-                  <span className="text-white font-bold text-xs tracking-wide truncate">
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
 
             {/* Schedule */}
             <div className="mt-3 flex items-center gap-2">
@@ -332,8 +313,8 @@ function LandingPage() {
 
             {/* CTA pinned to bottom */}
             <div className="mt-6 w-full">
-              <a
-                href="#grupo"
+              <Link
+                to={CTA_URL}
                 className="cta-pulse group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden px-6 py-4 bg-gold text-navy font-bold text-base rounded-xl transition-transform duration-300 active:scale-95"
               >
                 {/* Auto shine sweep */}
@@ -345,7 +326,7 @@ function LandingPage() {
                     strokeWidth={2.5}
                   />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -400,8 +381,8 @@ function LandingPage() {
 
             {/* CTA */}
             <div className="mt-8">
-              <a
-                href="#grupo"
+              <Link
+                to={CTA_URL}
                 className="cta-pulse group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden px-6 sm:px-8 py-4 bg-gold text-navy font-bold text-sm rounded-lg transition-transform duration-300 active:scale-95"
               >
                 <span className="cta-shine pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-white/40 blur-[3px]" />
@@ -412,7 +393,7 @@ function LandingPage() {
                     strokeWidth={2.5}
                   />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -509,8 +490,8 @@ function LandingPage() {
           </div>
 
           <Reveal delay={200} className="mt-12 sm:mt-16 flex justify-center">
-            <a
-              href="#grupo"
+            <Link
+              to={CTA_URL}
               className="cta-pulse group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden px-6 sm:px-10 py-4 bg-gold text-navy font-bold text-xs sm:text-sm rounded-lg transition-transform duration-300 active:scale-95"
             >
               <span className="cta-shine pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-white/40 blur-[3px]" />
@@ -521,7 +502,7 @@ function LandingPage() {
                   strokeWidth={2.5}
                 />
               </span>
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
