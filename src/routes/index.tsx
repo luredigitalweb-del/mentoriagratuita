@@ -17,9 +17,9 @@ import {
   Megaphone,
   Star,
 } from "lucide-react";
-import logoAsset from "@/assets/lure-logo.png.asset.json";
-import teamAsset from "@/assets/lure-team.png.asset.json";
-import eventoLureAsset from "@/assets/evento-lure.jpg.asset.json";
+import logoAsset from "@/assets/lure-logo.png";
+import teamAsset from "@/assets/lure-team.png";
+import eventoLureAsset from "@/assets/evento-lure.jpg";
 import { useInView } from "@/hooks/useInView";
 import { Reveal } from "@/components/Reveal";
 
@@ -39,9 +39,9 @@ export const Route = createFileRoute("/")({
         content:
           "Mentoria ao vivo toda terça às 12h para donos de agência. Sem replay.",
       },
-      { property: "og:image", content: teamAsset.url },
+      { property: "og:image", content: teamAsset },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: teamAsset.url },
+      { name: "twitter:image", content: teamAsset },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -243,7 +243,7 @@ function LandingPage() {
         {/* Desktop background image full */}
         <div className="hidden md:block absolute inset-0">
           <img
-            src={teamAsset.url}
+            src={teamAsset}
             alt="Equipe Lure Digital"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
@@ -261,7 +261,7 @@ function LandingPage() {
         {/* Mobile banner image with top-centered text overlay */}
         <div className="md:hidden relative min-h-screen flex items-start justify-center pt-10 pb-6">
           <img
-            src={eventoLureAsset.url}
+            src={eventoLureAsset}
             alt="Evento Lure Digital — Mentoria ao vivo"
             className="absolute inset-0 w-full h-full object-cover object-top"
           />
@@ -531,7 +531,7 @@ function LandingPage() {
             {/* Logo */}
             <Reveal delay={100} className="mb-6 sm:mb-8">
               <img
-                src={logoAsset.url}
+                src={logoAsset}
                 alt="Lure Digital"
                 className="h-12 sm:h-14 md:h-16 mx-auto opacity-90"
               />
@@ -574,7 +574,7 @@ function LandingPage() {
       <footer className="relative px-5 sm:px-6 md:px-12 py-8 sm:py-10 border-t border-border">
         <Reveal className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex flex-col sm:flex-row items-center gap-3">
-            <img src={logoAsset.url} alt="Lure Digital" className="h-8 sm:h-10 w-auto" />
+            <img src={logoAsset} alt="Lure Digital" className="h-8 sm:h-10 w-auto" />
             <span className="text-xs sm:text-sm text-muted-foreground">
               © {new Date().getFullYear()} Lure Digital. Todos os direitos reservados.
             </span>

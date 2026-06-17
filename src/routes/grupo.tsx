@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowLeft, MessageCircle } from "lucide-react";
-import logoAsset from "@/assets/lure-logo.png.asset.json";
+import logoAsset from "@/assets/lure-logo.png";
 
 export const Route = createFileRoute("/grupo")({
   head: () => ({
@@ -80,7 +80,7 @@ function GrupoPage() {
 
           {/* Logo */}
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Lure Digital"
             className="h-10 sm:h-12 mx-auto opacity-90 mb-6"
           />
