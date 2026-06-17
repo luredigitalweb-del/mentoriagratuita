@@ -259,16 +259,33 @@ function LandingPage() {
         </div>
 
         {/* Mobile banner image with top-centered text overlay */}
-        <div className="md:hidden relative min-h-screen flex items-start justify-center pt-10 pb-6">
+        <div className="md:hidden relative min-h-screen">
           <img
             src={eventoLureAsset}
             alt="Evento Lure Digital — Mentoria ao vivo"
-            className="absolute inset-0 w-full h-full object-cover object-top"
+            className="absolute inset-0 w-full h-full object-cover object-top brightness-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/60" />
+          {/* Dark scrim — dark at the top for the text, fading so the people stay visible below */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 28%, rgba(0,0,0,0.35) 48%, rgba(0,0,0,0.08) 62%, rgba(0,0,0,0) 72%)",
+            }}
+          />
+          {/* Radial focus behind the headline so the text pops */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(110% 45% at 50% 22%, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.35) 45%, transparent 70%)",
+            }}
+          />
 
-          {/* Top-centered mobile content */}
-          <div className="relative z-10 flex flex-col items-center text-center px-5 max-w-sm mx-auto">
+          {/* Mobile content: text centered vertically, CTA pinned to bottom */}
+          <div className="relative z-10 flex min-h-screen w-full flex-col items-center px-5 pt-16 pb-8 max-w-sm mx-auto">
+            {/* Text group near the top */}
+            <div className="flex w-full flex-1 flex-col items-center justify-start text-center">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-gold/40 rounded-full text-[9px] uppercase tracking-[0.18em] text-gold font-bold mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
@@ -276,11 +293,11 @@ function LandingPage() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-display text-white text-[1.35rem] font-bold leading-[1.15] tracking-tight">
+            <h1 className="font-display text-white text-[1.75rem] font-extrabold leading-[1.1] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]">
               Toda Terça-feira às 12:00{" "}
-              <span className="text-gold">mentoria gratuita</span>{" "}
+              <span className="shimmer-text">mentoria gratuita</span>{" "}
               no Meet para te ajudar a construir uma agência que faça pelo menos{" "}
-              <span className="text-gold">R$ 100.000</span>{" "}
+              <span className="shimmer-text">R$ 100.000</span>{" "}
               de lucro no bolso por mês focando em apenas 4 pilares:
             </h1>
 
@@ -306,23 +323,29 @@ function LandingPage() {
             {/* Schedule */}
             <div className="mt-3 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-gold shrink-0" />
-              <span className="text-white/80 text-[11px]">
+              <span className="text-white font-medium text-[11px] drop-shadow-[0_1px_5px_rgba(0,0,0,0.95)]">
                 Próxima aula: Terça-feira • 12h — Ao vivo via Google Meet
               </span>
             </div>
 
-            {/* CTA */}
-            <div className="mt-4 w-full">
-              <Link
-                to={CTA_URL}
-                className="group inline-flex w-full items-center justify-center gap-2 px-6 py-3.5 bg-gold hover:bg-[#E8C45A] text-navy font-bold text-sm rounded-lg transition-all duration-300"
+            </div>
+
+            {/* CTA pinned to bottom */}
+            <div className="mt-6 w-full">
+              <a
+                href="#grupo"
+                className="cta-pulse group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden px-6 py-4 bg-gold text-navy font-bold text-base rounded-xl transition-transform duration-300 active:scale-95"
               >
-                ENTRAR NO GRUPO
-                <ArrowRight
-                  className="h-4 w-4 transition-transform group-hover:translate-x-1"
-                  strokeWidth={2.5}
-                />
-              </Link>
+                {/* Auto shine sweep */}
+                <span className="cta-shine pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-white/40 blur-[3px]" />
+                <span className="relative flex items-center gap-2">
+                  ENTRAR NO GRUPO
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    strokeWidth={2.5}
+                  />
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -339,9 +362,9 @@ function LandingPage() {
             {/* Headline */}
             <h1 className="font-display text-white text-[1.65rem] sm:text-[2.2rem] md:text-[3rem] lg:text-[3.5rem] font-bold leading-[1.15] sm:leading-[1.1] tracking-tight">
               Toda Terça-feira às 12:00{" "}
-              <span className="text-gold">mentoria gratuita</span>{" "}
+              <span className="shimmer-text">mentoria gratuita</span>{" "}
               no Meet para te ajudar a construir uma agência que faça pelo menos{" "}
-              <span className="text-gold">R$ 100.000</span>{" "}
+              <span className="shimmer-text">R$ 100.000</span>{" "}
               de lucro no bolso por mês focando em apenas 4 pilares:
             </h1>
 
@@ -377,16 +400,19 @@ function LandingPage() {
 
             {/* CTA */}
             <div className="mt-8">
-              <Link
-                to={CTA_URL}
-                className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 sm:px-8 py-4 bg-gold hover:bg-[#E8C45A] text-navy font-bold text-sm rounded-lg transition-all duration-300"
+              <a
+                href="#grupo"
+                className="cta-pulse group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden px-6 sm:px-8 py-4 bg-gold text-navy font-bold text-sm rounded-lg transition-transform duration-300 active:scale-95"
               >
-                ENTRAR NO GRUPO
-                <ArrowRight
-                  className="h-5 w-5 transition-transform group-hover:translate-x-1"
-                  strokeWidth={2.5}
-                />
-              </Link>
+                <span className="cta-shine pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-white/40 blur-[3px]" />
+                <span className="relative flex items-center gap-3">
+                  ENTRAR NO GRUPO
+                  <ArrowRight
+                    className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                    strokeWidth={2.5}
+                  />
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -402,7 +428,7 @@ function LandingPage() {
           <div className="flex whitespace-nowrap animate-marquee-scroll" style={{ animation: "marquee-scroll 20s linear infinite" }}>
             {Array.from({ length: 12 }).map((_, i) => (
               <span key={i} className="inline-flex items-center gap-6 mx-6 text-navy font-display font-bold text-sm uppercase tracking-[0.15em]">
-                Construindo seu negócio digital
+                100k de lucro por mês
                 <span className="w-1.5 h-1.5 rounded-full bg-navy/60" />
               </span>
             ))}
@@ -417,23 +443,8 @@ function LandingPage() {
           <div className="flex whitespace-nowrap" style={{ animation: "marquee-scroll-reverse 25s linear infinite" }}>
             {Array.from({ length: 12 }).map((_, i) => (
               <span key={i} className="inline-flex items-center gap-6 mx-6 text-gold font-display font-bold text-sm uppercase tracking-[0.15em]">
-                Construindo seu negócio digital
+                100k de lucro por mês
                 <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom strip — gold-deep, text navy, left scroll */}
-        <div
-          className="relative py-2.5 -rotate-1.5 -mx-4 -mt-1.5"
-          style={{ background: "var(--gold-deep)" }}
-        >
-          <div className="flex whitespace-nowrap" style={{ animation: "marquee-scroll 18s linear infinite" }}>
-            {Array.from({ length: 12 }).map((_, i) => (
-              <span key={i} className="inline-flex items-center gap-6 mx-6 text-navy font-display font-bold text-sm uppercase tracking-[0.15em]">
-                Construindo seu negócio digital
-                <span className="w-1.5 h-1.5 rounded-full bg-navy/50" />
               </span>
             ))}
           </div>
@@ -498,16 +509,19 @@ function LandingPage() {
           </div>
 
           <Reveal delay={200} className="mt-12 sm:mt-16 flex justify-center">
-            <Link
-              to={CTA_URL}
-              className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 sm:px-10 py-4 bg-gold hover:bg-[#E8C45A] text-navy font-bold text-xs sm:text-sm rounded-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]"
+            <a
+              href="#grupo"
+              className="cta-pulse group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden px-6 sm:px-10 py-4 bg-gold text-navy font-bold text-xs sm:text-sm rounded-lg transition-transform duration-300 active:scale-95"
             >
-              QUERO DOMINAR OS 4 PILARES
-              <ArrowRight
-                className="h-5 w-5 transition-transform group-hover:translate-x-1"
-                strokeWidth={2.5}
-              />
-            </Link>
+              <span className="cta-shine pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-white/40 blur-[3px]" />
+              <span className="relative flex items-center gap-3">
+                QUERO DOMINAR OS 4 PILARES
+                <ArrowRight
+                  className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                  strokeWidth={2.5}
+                />
+              </span>
+            </a>
           </Reveal>
         </div>
       </section>
@@ -554,10 +568,13 @@ function LandingPage() {
             <Reveal delay={500} className="mt-8 sm:mt-10 flex flex-col items-center gap-6 sm:gap-8">
               <Link
                 to={CTA_URL}
-                className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full px-6 sm:px-12 py-4 sm:py-5 bg-gold hover:bg-[#E8C45A] text-navy font-bold text-sm sm:text-base transition-all duration-300 hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] hover:scale-105"
+                className="cta-pulse group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden rounded-full px-6 sm:px-12 py-4 sm:py-5 bg-gold text-navy font-bold text-sm sm:text-base transition-transform duration-300 active:scale-95"
               >
-                Entrar no grupo agora
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />
+                <span className="cta-shine pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-white/40 blur-[3px]" />
+                <span className="relative flex items-center gap-3">
+                  Entrar no grupo agora
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />
+                </span>
               </Link>
               <Countdown />
               <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider px-2">
