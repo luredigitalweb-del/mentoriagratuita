@@ -49,31 +49,23 @@ function GrupoPage() {
   const dashOffset = circumference - (progress / 100) * circumference;
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#050505] flex items-center justify-center px-5">
-      {/* Atmospheric Background Elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-gold/10 rounded-full"
-          style={{ filter: "blur(120px)" }}
-        />
-        <div
-          className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-gold/5 rounded-full"
-          style={{ filter: "blur(120px)" }}
-        />
-      </div>
-
+    <div
+      className="relative min-h-screen overflow-hidden bg-[#050505] flex items-center justify-center px-5"
+      style={{
+        // Cheap atmospheric glow via gradients (no expensive blur filters that freeze on click).
+        backgroundImage:
+          "radial-gradient(40% 40% at 5% 0%, rgba(212,175,55,0.12), transparent 70%), radial-gradient(40% 40% at 95% 100%, rgba(212,175,55,0.07), transparent 70%)",
+      }}
+    >
       <div className="relative w-full max-w-lg">
-        {/* Subtle glow behind card */}
         <div
-          className="absolute -inset-1 rounded-[2rem] opacity-50"
+          className="relative bg-[#0b0b0b]/95 border border-white/10 rounded-[2rem] p-10 md:p-14 text-center shadow-2xl overflow-hidden"
           style={{
-            background:
-              "linear-gradient(to bottom, rgba(212,175,55,0.2), transparent)",
-            filter: "blur(24px)",
+            // Soft gold glow at the top edge, drawn with a gradient instead of a blurred element.
+            boxShadow:
+              "0 0 80px rgba(212,175,55,0.10), 0 20px 60px rgba(0,0,0,0.6)",
           }}
-        />
-
-        <div className="relative bg-black/40 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-10 md:p-14 text-center shadow-2xl overflow-hidden">
+        >
           {/* Top Accent Line */}
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px"
