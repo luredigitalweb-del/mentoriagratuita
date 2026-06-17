@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Calendar,
@@ -55,15 +55,7 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-// Open the WhatsApp group directly — no intermediate page, so the button is instant.
-const WHATSAPP_URL = "https://chat.whatsapp.com/EtrlMyrfJU90MjnPROlui1";
-
-// Fire the Meta Pixel Lead event the moment the user clicks a CTA.
-function trackLead() {
-  if (typeof window !== "undefined") {
-    (window as { fbq?: (...args: unknown[]) => void }).fbq?.("track", "Lead");
-  }
-}
+const CTA_URL = "/grupo";
 
 function Countdown() {
   const [time, setTime] = useState({ d: 0, h: 0, m: 0, s: 0 });
@@ -321,11 +313,8 @@ function LandingPage() {
 
             {/* CTA pinned to bottom */}
             <div className="mt-6 w-full">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={trackLead}
+              <Link
+                to={CTA_URL}
                 className="cta-pulse group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden px-6 py-4 bg-gold text-navy font-bold text-base rounded-xl transition-transform duration-300 active:scale-95"
               >
                 {/* Auto shine sweep */}
@@ -337,7 +326,7 @@ function LandingPage() {
                     strokeWidth={2.5}
                   />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -392,11 +381,8 @@ function LandingPage() {
 
             {/* CTA */}
             <div className="mt-8">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={trackLead}
+              <Link
+                to={CTA_URL}
                 className="cta-pulse group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden px-6 sm:px-8 py-4 bg-gold text-navy font-bold text-sm rounded-lg transition-transform duration-300 active:scale-95"
               >
                 <span className="cta-shine pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-white/40 blur-[3px]" />
@@ -407,7 +393,7 @@ function LandingPage() {
                     strokeWidth={2.5}
                   />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -504,11 +490,8 @@ function LandingPage() {
           </div>
 
           <Reveal delay={200} className="mt-12 sm:mt-16 flex justify-center">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={trackLead}
+            <Link
+              to={CTA_URL}
               className="cta-pulse group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden px-6 sm:px-10 py-4 bg-gold text-navy font-bold text-xs sm:text-sm rounded-lg transition-transform duration-300 active:scale-95"
             >
               <span className="cta-shine pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-white/40 blur-[3px]" />
@@ -519,7 +502,7 @@ function LandingPage() {
                   strokeWidth={2.5}
                 />
               </span>
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -564,11 +547,8 @@ function LandingPage() {
             </Reveal>
 
             <Reveal delay={500} className="mt-8 sm:mt-10 flex flex-col items-center gap-6 sm:gap-8">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={trackLead}
+              <Link
+                to={CTA_URL}
                 className="cta-pulse group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden rounded-full px-6 sm:px-12 py-4 sm:py-5 bg-gold text-navy font-bold text-sm sm:text-base transition-transform duration-300 active:scale-95"
               >
                 <span className="cta-shine pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-white/40 blur-[3px]" />
@@ -576,7 +556,7 @@ function LandingPage() {
                   Entrar no grupo agora
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />
                 </span>
-              </a>
+              </Link>
               <Countdown />
               <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider px-2">
                 Aulas ao vivo • Sem replay • Vagas limitadas por sala do Meet

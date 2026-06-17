@@ -9,6 +9,9 @@ export const getRouter = () => {
     routeTree,
     context: { queryClient },
     scrollRestoration: true,
+    // Preload the target route as soon as the user hovers/taps a link,
+    // so navigating to /grupo is instant.
+    defaultPreload: "intent",
     defaultPreloadStaleTime: 0,
   });
 
