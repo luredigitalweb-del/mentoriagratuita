@@ -16,7 +16,7 @@ export const Route = createFileRoute("/grupo")({
   component: GrupoPage,
 });
 
-const WHATSAPP_URL = "https://chat.whatsapp.com/EtrlMyrfJU90MjnPROlui1";
+const WHATSAPP_URL = "https://chat.whatsapp.com/DT5TwI6yyMOCnTOGxcqpMJ?s=cl&p=i&mlu=2";
 
 function GrupoPage() {
   const [seconds, setSeconds] = useState(2);

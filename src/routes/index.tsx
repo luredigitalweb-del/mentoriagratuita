@@ -31,13 +31,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Toda terça às 12h, ao vivo: construa uma agência que entrega R$ 100.000 de lucro/mês com proposta, processo, posicionamento e canais.",
+          "Toda terça às 19h, ao vivo: construa uma agência que entrega R$ 100.000 de lucro/mês com proposta, processo, posicionamento e canais.",
       },
       { property: "og:title", content: "Lure Digital — Mentoria Gratuita" },
       {
         property: "og:description",
         content:
-          "Mentoria ao vivo toda terça às 12h para donos de agência. Sem replay.",
+          "Mentoria ao vivo toda terça às 19h para donos de agência. Sem replay.",
       },
       { property: "og:image", content: teamAsset },
       { name: "twitter:card", content: "summary_large_image" },
@@ -67,7 +67,7 @@ function Countdown() {
       const day = now.getDay();
       let diff = (2 - day + 7) % 7;
       target.setDate(now.getDate() + diff);
-      target.setHours(12, 0, 0, 0);
+      target.setHours(19, 0, 0, 0);
       if (target.getTime() <= now.getTime()) target.setDate(target.getDate() + 7);
       const ms = target.getTime() - now.getTime();
       const d = Math.floor(ms / 86400000);
@@ -294,7 +294,7 @@ function LandingPage() {
 
             {/* Headline */}
             <h1 className="font-display text-white text-[1.75rem] font-extrabold leading-[1.1] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]">
-              Toda Terça-feira às 12:00{" "}
+              Toda Terça-feira às 19:00{" "}
               <span className="shimmer-text">mentoria gratuita</span>{" "}
               no Meet para te ajudar a construir uma agência que faça pelo menos{" "}
               <span className="shimmer-text">R$ 100.000</span>{" "}
@@ -305,7 +305,7 @@ function LandingPage() {
             <div className="mt-3 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-gold shrink-0" />
               <span className="text-white font-medium text-[11px] drop-shadow-[0_1px_5px_rgba(0,0,0,0.95)]">
-                Próxima aula: Terça-feira • 12h — Ao vivo via Google Meet
+                Próxima aula: Terça-feira • 19h — Ao vivo via Google Meet
               </span>
             </div>
 
@@ -342,7 +342,7 @@ function LandingPage() {
 
             {/* Headline */}
             <h1 className="font-display text-white text-[1.65rem] sm:text-[2.2rem] md:text-[3rem] lg:text-[3.5rem] font-bold leading-[1.15] sm:leading-[1.1] tracking-tight">
-              Toda Terça-feira às 12:00{" "}
+              Toda Terça-feira às 19:00{" "}
               <span className="shimmer-text">mentoria gratuita</span>{" "}
               no Meet para te ajudar a construir uma agência que faça pelo menos{" "}
               <span className="shimmer-text">R$ 100.000</span>{" "}
@@ -375,7 +375,7 @@ function LandingPage() {
             <div className="mt-8 flex items-start sm:items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-gold mt-1.5 sm:mt-0 shrink-0" />
               <span className="text-white/70 text-xs sm:text-sm">
-                Próxima aula: Terça-feira • 12h — Ao vivo via Google Meet
+                Próxima aula: Terça-feira • 19h — Ao vivo via Google Meet
               </span>
             </div>
 
@@ -533,7 +533,7 @@ function LandingPage() {
             </Reveal>
 
             <Reveal delay={200}>
-              <p className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-gold font-semibold mb-3 sm:mb-4">Terça-feira • 12h</p>
+              <p className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-gold font-semibold mb-3 sm:mb-4">Terça-feira • 19h</p>
               <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] sm:leading-[1.1] font-bold">
                 Sua próxima decisão pode valer{" "}
                 <span className="text-gold">100 mil por mês.</span>
