@@ -294,7 +294,7 @@ function LandingPage() {
 
             {/* Headline */}
             <h1 className="font-display text-white text-[1.75rem] font-extrabold leading-[1.1] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]">
-              Toda Terça-feira às 19:00{" "}
+              Essa Terça-feira às 19:00{" "}
               <span className="shimmer-text">mentoria gratuita</span>{" "}
               no Meet para te ajudar a construir uma agência que faça pelo menos{" "}
               <span className="shimmer-text">R$ 100.000</span>{" "}
@@ -342,7 +342,7 @@ function LandingPage() {
 
             {/* Headline */}
             <h1 className="font-display text-white text-[1.65rem] sm:text-[2.2rem] md:text-[3rem] lg:text-[3.5rem] font-bold leading-[1.15] sm:leading-[1.1] tracking-tight">
-              Toda Terça-feira às 19:00{" "}
+              Essa Terça-feira às 19:00{" "}
               <span className="shimmer-text">mentoria gratuita</span>{" "}
               no Meet para te ajudar a construir uma agência que faça pelo menos{" "}
               <span className="shimmer-text">R$ 100.000</span>{" "}
